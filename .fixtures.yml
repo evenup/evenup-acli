@@ -1,0 +1,6 @@
+fixtures:
+  repositories:
+    java: https://github.com/evenup/evenup-java.git
+  symlinks:
+    acli: "#{source_dir}"
+
