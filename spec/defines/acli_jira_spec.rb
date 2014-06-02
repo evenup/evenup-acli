@@ -56,7 +56,7 @@ describe 'acli::jira', :type => :define do
     } }
 
     it { should contain_cron('jira_audit_task').with(
-      :command  => "/opt/acli/atlassian.sh jira --action createIssue --project 'Test Project' --summary 'This is an automated test ticket' --type 'test' --labels 'a b c' --assignee 'testuser' --description 'This task is for some neat things' --parent 'TP-1234'",
+      :command  => "/opt/acli/atlassian.sh jira --action createIssue --project 'Test Project' --summary 'This is an automated test ticket' --type 'test' --labels 'a b c' --assignee 'testuser' --description 'This task is for some neat things' --parent 'TP-1234'"
     ) }
   end
 
