@@ -26,7 +26,7 @@ class acli::install {
   }
 
   exec { 'extract_acli':
-    command   => "/usr/bin/unzip /tmp/${filename} -d /opt/atlassian-cli-${acli::version}",
+    command   => "/usr/bin/unzip /tmp/${filename} -d /opt/",
     cwd       => '/opt',
     creates   => "/opt/atlassian-cli-${acli::version}",
     path      => '/bin/:/usr/bin/',
