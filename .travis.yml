@@ -1,0 +1,48 @@
+language: ruby
+bundler_args: --without development
+script: "bundle exec rake spec SPEC_OPTS='--format documentation'"
+rvm:
+  - 1.8.7
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+script:
+  - "rake lint"
+  - "rake spec SPEC_OPTS='--format documentation'"
+  - "rake spec"
+env:
+  - PUPPET_VERSION="~> 2.7.0"
+  - PUPPET_VERSION="~> 3.1.0"
+  - PUPPET_VERSION="~> 3.2.0"
+  - PUPPET_VERSION="~> 3.3.0"
+  - PUPPET_VERSION="~> 3.4.0"
+  - PUPPET_VERSION="~> 3.5.0"
+  - PUPPET_VERSION="~> 3.6.0"
+matrix:
+  exclude:
+    - rvm: 1.9.3
+      env: PUPPET_VERSION="~> 2.7.0"
+    - rvm: 2.0.0
+      env: PUPPET_VERSION="~> 2.7.0"
+    - rvm: 2.0.0
+      env: PUPPET_VERSION="~> 3.1.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 2.7.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 3.0.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 3.1.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 3.2.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 3.3.0"
+    - rvm: 2.1.0
+      env: PUPPET_VERSION="~> 3.4.0"
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      - secure: "ZGLSEwGAfp7YjI7dHgzVRjWUzeeJfDNcYUHJ7xg/RKgcZrRXE6qTonqDnCYkbbG7XeiyhOvLsQiRuIgtR8yKrQ936IFKFBqzFUbA78ty5j3jbjVs08Oz+q1MDPoLJxWtQB5SEcNz5myMIODbGfvuxq4m07NGf+VQCuUKin8DDCg="
+  on_success: always
+  on_failure: always
+
