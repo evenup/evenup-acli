@@ -104,13 +104,13 @@ define acli::jira (
   }
 
   cron { "jira_${name}":
-    ensure    => $ensure,
-    command   => "/opt/acli/atlassian.sh jira --action createIssue --project '${project}' --summary '${summary}' --type '${type}'${label_switch}${assignee_switch}${description_switch}${parent_switch}",
-    hour      => $hour,
-    minute    => $minute,
-    month     => $month,
-    monthday  => $monthday,
-    weekday   => $weekday,
+    ensure   => $ensure,
+    command  => "/opt/acli/atlassian.sh jira --action createIssue --project '${project}' --summary '${summary}' --type '${type}'${label_switch}${assignee_switch}${description_switch}${parent_switch}",
+    hour     => $hour,
+    minute   => $minute,
+    month    => $month,
+    monthday => $monthday,
+    weekday  => $weekday,
 
   }
 
