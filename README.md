@@ -17,11 +17,11 @@
 
 ## Overview
 
-A Puppet module that installs the Atlassian CLI tools from Bob Swift and Appfire (https://bobswift.atlassian.net/wiki/dashboard.action) and defines to schedule recurring tasks (via cron).
+A Puppet module that installs the Atlassian CLI tools from Bob Swift and Appfire.
 
 ## Module Description
 
-A Puppet module that installs the Atlassian CLI tools from Bob Swift and Appfire (https://bobswift.atlassian.net/wiki/dashboard.action) and defines to schedule recurring tasks (via cron).
+A Puppet module that installs the Atlassian CLI tools from Bob [Swift and Appfire](https://bobswift.atlassian.net/wiki/dashboard.action) and defines to schedule recurring tasks (via cron).
 
 Please note a license to use the ACLI software is required!  See https://bobswift.atlassian.net/wiki/display/ACLI/Atlassian+CLI+license for details.
 
@@ -68,7 +68,7 @@ To create a quarterly Jira restore test task
 
 ## Reference
 
-### Parameters
+### Public methods
 
 #### Class: acli
 
@@ -82,34 +82,42 @@ String.  Password ACLI jobs should use to connect
 
 #####`bamboo_server`
 String.  Base URL for your Atlassian Bamboo server.
+
 Default: ''
 
 #####`confluence_server`
 String.  Base URL for your Atlassian Confluence server.
+
 Default: ''
 
 #####`crucible_server`
 String.  Base URL for your Atlassian Crucible server.
+
 Default: ''
 
 #####`fisheye_server`
 String.  Base URL for your Atlassian Fisheye server.
+
 Default: ''
 
 #####`jira_server`
 String.  Base URL for your Atlassian Jira server.
+
 Default: ''
 
 #####`stash_server`
 String.  Base URL for your Atlassian Stash server.
+
 Default: ''
 
 #####`source`
 String.  Source path to download ACLI
+
 Default: 'https://bobswift.atlassian.net/wiki/download/attachments/16285777'
 
 #####`version`
 String.  Version of ACLI to install.  This will also be used to generate the actual filename to download from $source.
+
 Default: '3.9.0'
 
 #### Define: acli::jira
@@ -128,42 +136,52 @@ Default: ''
 
 #####`description`
 String.  Description of the issue.
+
 Default: ''
 
 #####`labels`
 String.  Labels of the issue. (comma seperated labels)
+
 Default: ''
 
 #####`parent`
 String.  Parent issue of this issue.
+
 Default: ''
 
 #####`type`
 String.  Type of issue.
+
 Default: task
 
 #####`monthday`
 String.  Day of the month the issue should be created.
+
 Default: 1
 
 #####`month`
 String.  Month the issue should be created.
+
 Default: 1
 
 #####`hour`
 String.  Hour of the day the issue should be created.
+
 Default: 0
 
 #####`minute`
 String.  Minute of the day the issue should be created.
+
 Default: 1
 
 #####`weekday`
 String.  Day of the week the issue should be created
+
 Default: *
 
 #####`ensure`
 String.  Should the job be present?
+
 Default: present
 
 ### Private classes
@@ -185,4 +203,5 @@ information on adding and validating tests for PRs.
 ## Changelog / Contributors
 
 [Changelog](https://github.com/evenup/evenup-acli/CHANGELOG)
+
 [Contributors](https://github.com/evenup/evenup-acli/graphs/contributors)
