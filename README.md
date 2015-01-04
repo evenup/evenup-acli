@@ -202,6 +202,6 @@ information on adding and validating tests for PRs.
 
 ## Changelog / Contributors
 
-[Changelog](https://github.com/evenup/evenup-acli/CHANGELOG)
+[Changelog](https://github.com/evenup/evenup-acli/blob/master/CHANGELOG)
 
 [Contributors](https://github.com/evenup/evenup-acli/graphs/contributors)

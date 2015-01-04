@@ -7,7 +7,7 @@
   "source": "https://github.com/evenup/evenup-acli",
   "project_page": "https://github.com/evenup/evenup-acli",
   "issues_url": "https://github.com/evenup/evenup-acli/issues",
-  "tags": ["acli", "audit"],
+  "tags": ["acli", "jira"],
   "operatingsystem_support": [
     { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6", "7" ] },
     { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
