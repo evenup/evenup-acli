@@ -38,11 +38,6 @@
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
-#
-# === Copyright
-#
-# Copyright 2014 EvenUp.
-#
 class acli (
   $user,
   $password,
@@ -53,7 +48,7 @@ class acli (
   $jira_server        = '',
   $stash_server       = '',
   $source             = 'https://bobswift.atlassian.net/wiki/download/attachments/16285777',
-  $version            = '3.8.0',
+  $version            = '3.9.0',
 ) {
 
   include java

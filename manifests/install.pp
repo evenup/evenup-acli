@@ -7,11 +7,6 @@
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
-#
-# === Copyright
-#
-# Copyright 2014 EvenUp.
-#
 class acli::install {
 
   $filename = "atlassian-cli-${acli::version}-distribution.zip"

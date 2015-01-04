@@ -7,11 +7,6 @@
 #
 # * Justin Lambert <mailto:jlambert@letsevenup.com>
 #
-#
-# === Copyright
-#
-# Copyright 2014 EvenUp.
-#
 class acli::config {
 
   file { '/opt/acli/atlassian.sh':
