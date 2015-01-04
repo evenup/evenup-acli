@@ -9,7 +9,13 @@
 #
 class acli::install {
 
+  if $caller_module_name != $module_name {
+    fail("Use of private class ${name} by ${caller_module_name}")
+  }
+
   $filename = "atlassian-cli-${acli::version}-distribution.zip"
+
+  ensure_packages('unzip')
 
   exec { 'fetch_acli':
     command   => "/usr/bin/curl -o ${filename} ${acli::source}/${filename}",
@@ -21,11 +27,11 @@ class acli::install {
   }
 
   exec { 'extract_acli':
-    command   => "/usr/bin/unzip /tmp/${filename} -d /opt/",
+    command   => "unzip /tmp/${filename} -d /opt/",
     cwd       => '/opt',
     creates   => "/opt/atlassian-cli-${acli::version}",
     path      => '/bin/:/usr/bin/',
-    require   => Exec['fetch_acli'],
+    require   => [Exec['fetch_acli'], Package['unzip']],
     logoutput => on_failure,
   }
 
