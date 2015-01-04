@@ -2,7 +2,7 @@
   "name": "evenup-acli",
   "version": "0.0.1",
   "author": "Justin Lambert <jlambert@letsevenup.com>",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "summary": "Manages ACLI and related jobs",
   "source": "https://github.com/evenup/evenup-acli",
   "project_page": "https://github.com/evenup/evenup-acli",
