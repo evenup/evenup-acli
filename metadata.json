@@ -1,6 +1,6 @@
 {
   "name": "evenup-acli",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Justin Lambert <jlambert@letsevenup.com>",
   "license": "Apache-2.0",
   "summary": "Manages ACLI and related jobs",
