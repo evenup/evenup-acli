@@ -17,34 +17,34 @@ user=<%= scope.lookupvar('acli::user') %>
 password=<%= scope.lookupvar('acli::password') %>
 
 <% el = '' -%>
-<% if scope.lookupvar('acli::confluence_server') != '' -%>
+<% if @confluence_server -%>
 if [ "$application" = "confluence" ]; then
-    string="confluence-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::confluence_server') %> --user $user --password $password"
+    string="confluence-cli-<%= @version %>.jar --server <%= @confluence_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
-<% if scope.lookupvar('acli::jira_server') != '' -%>
+<% if @jira_server -%>
 <%= el %>if [ "$application" = "jira" ]; then
-    string="jira-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::jira_server') %> --user $user --password $password"
+    string="jira-cli-<%= @version %>.jar --server <%= @jira_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
-<% if scope.lookupvar('acli::fisheye_server') != '' -%>
+<% if @fisheye_server -%>
 <%= el %>if [ "$application" = "fisheye" ]; then
-    string="fisheye-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::fisheye_server') %> --user $user --password $password"
+    string="fisheye-cli-<%= @version %>.jar --server <%= @fisheye_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
-<% if scope.lookupvar('acli::crucible_server') != '' -%>
+<% if @crucible_server -%>
 <%= el %>if [ "$application" = "crucible" ]; then
-    string="crucible-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::crucible_server') %> --user $user --password $password"
+    string="crucible-cli-<%= @version %>.jar --server <%= @crucible_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
-<% if scope.lookupvar('acli::bamboo_server') != '' -%>
+<% if @bamboo_server -%>
 <%= el %>if [ "$application" = "bamboo" ]; then
-    string="bamboo-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::bamboo_server') %> --user $user --password $password"
+    string="bamboo-cli-<%= @version %>.jar --server <%= @bamboo_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
-<% if scope.lookupvar('acli::stash_server') != '' -%>
+<% if @stash_server -%>
 <%= el %>if [ "$application" = "stash" ]; then
-    string="stash-cli-<%= scope.lookupvar('acli::version') %>.jar --server <%= scope.lookupvar('acli::stash_server') %> --user $user --password $password"
+    string="stash-cli-<%= @version %>.jar --server <%= @stash_server %> --user $user --password $password"
     <% el = 'el' -%>
 <% end -%>
 <%= el %>if [ "$application" = "" ]; then

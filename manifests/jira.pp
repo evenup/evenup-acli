@@ -61,10 +61,10 @@
 define acli::jira (
   $project,
   $summary,
-  $assignee     = '',
-  $description  = '',
-  $labels       = '',
-  $parent       = '',
+  $assignee     = undef,
+  $description  = undef,
+  $labels       = undef,
+  $parent       = undef,
   $type         = 'task',
   $monthday     = 1,
   $month        = 1,
@@ -74,33 +74,37 @@ define acli::jira (
   $ensure       = 'present',
 ) {
 
-  if $labels != '' {
-    $label_switch = " --labels '${labels}'"
+  if $labels {
+    $_labels = "--labels '${labels}'"
   } else {
-    $label_switch = ''
+    $_labels = undef
   }
 
-  if $assignee != '' {
-    $assignee_switch = " --assignee '${assignee}'"
+  if $assignee {
+    $_assignee = "--assignee '${assignee}'"
   } else {
-    $assignee_switch = ''
+    $_assignee = undef
   }
 
-  if $description != '' {
-    $description_switch = " --description '${description}'"
+  if $description {
+    $_description = "--description '${description}'"
   } else {
-    $description_switch = ''
+    $_description = undef
   }
 
-  if $parent != '' {
-    $parent_switch = " --parent '${parent}'"
+  if $parent {
+    $_parent = "--parent '${parent}'"
   } else {
-    $parent_switch = ''
+    $_parent = undef
   }
+
+  $_type = "--type '${type}'"
+
+  $options = chomp(join(delete_undef_values([$_type, $_labels, $_assignee, $_description, $_parent]), ' '))
 
   cron { "jira_${name}":
     ensure   => $ensure,
-    command  => "/opt/acli/atlassian.sh jira --action createIssue --project '${project}' --summary '${summary}' --type '${type}'${label_switch}${assignee_switch}${description_switch}${parent_switch}",
+    command  => "/opt/acli/atlassian.sh jira --action createIssue --project '${project}' --summary '${summary}' ${options}",
     hour     => $hour,
     minute   => $minute,
     month    => $month,

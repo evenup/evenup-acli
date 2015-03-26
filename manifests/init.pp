@@ -41,19 +41,19 @@
 class acli (
   $user,
   $password,
-  $bamboo_server      = '',
-  $confluence_server  = '',
-  $crucible_server    = '',
-  $fisheye_server     = '',
-  $jira_server        = '',
-  $stash_server       = '',
+  $bamboo_server      = undef,
+  $confluence_server  = undef,
+  $crucible_server    = undef,
+  $fisheye_server     = undef,
+  $jira_server        = undef,
+  $stash_server       = undef,
   $source             = 'https://bobswift.atlassian.net/wiki/download/attachments/16285777',
   $version            = '3.9.0',
 ) {
 
-  include java
+  include ::java
 
-  class { 'acli::install': } ->
-  class { 'acli::config': }
+  class { '::acli::install': } ->
+  class { '::acli::config': }
 
 }
